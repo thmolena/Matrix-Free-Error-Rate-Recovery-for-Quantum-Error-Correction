@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hqml-drift-forecasting"
+version = "3.0.0"
+description = "Reproducible saturation-baseline audit of matrix-free QEC error-rate recovery"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.0,<3", "matplotlib>=3.9,<4"]
+
+[project.scripts]
+drift-forecasting-reproduce = "hqml_drift_forecasting.experiment:main"
+drift-forecasting-figures = "hqml_drift_forecasting.figures:main"
+effective-toggle-study = "hqml_drift_forecasting.persistence_study:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["hqml_drift_forecasting*"]
+
+[tool.setuptools.package-data]
+"hqml_drift_forecasting" = ["data/source/*", "results/*"]

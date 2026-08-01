@@ -1,0 +1,7 @@
+include CITATION.cff
+include LICENSE
+include README.md
+recursive-include src/hqml_drift_forecasting/data/source *
+recursive-include src/hqml_drift_forecasting/results *
+recursive-include tests *.py
+

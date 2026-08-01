@@ -1,0 +1,4 @@
+# SHA-256 for redistributed data files under code/data.
+# Externally cached inputs are pinned in the package evidence manifest.
+15ffb8c7773a4fa5d1d498bbe01fd929334c0c13da69ab81704ad13beadde5f5  data/source/google_qec3v5_experiment_summary.csv
+bdfce36a71f04295ac78fb372d9c2e381801c05e3be119f919750ef59026d072  data/source/syndromes_dataset.zip

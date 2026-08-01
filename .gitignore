@@ -15,14 +15,9 @@ env/
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# Model checkpoints & outputs
-outputs/*.pt
-outputs/*.pth
+# Model checkpoints and local outputs
+outputs/
 checkpoints/
-
-# Data (keep CSV header stubs, ignore large generated files)
-data/*.parquet
-data/*.hdf5
 
 # OS
 .DS_Store
@@ -38,11 +33,16 @@ Thumbs.db
 *.so
 *.dylib
 
-# LaTeX build artifacts (keep .tex, .bib, .bbl and compiled .pdf)
+# LaTeX build artifacts (keep source and compiled PDF)
 *.aux
+*.bbl
 *.log
 *.out
 *.blg
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+
+# Local binary build artifacts
+*.whl
+*.tar.gz

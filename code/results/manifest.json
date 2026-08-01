@@ -1,0 +1,18 @@
+{
+  "schema_version": 2,
+  "title": "A Saturation-Baseline Audit of Matrix-Free Quantum Error-Rate Recovery",
+  "package": "hqml-drift-forecasting",
+  "original_data_source": "https://zenodo.org/records/6804040",
+  "locked_results": {
+    "path": "code/results/locked_results.json",
+    "sha256": "84c817b2047a836ab246f351b4b89d88042d569187bf42ec5f2088bb035c17ab"
+  },
+  "commands": {
+    "install": "python -m pip install -e code",
+    "download": "python code/scripts/download_data.py",
+    "reproduce": "python code/scripts/reproduce.py --verify",
+    "figures": "python code/scripts/make_figures.py",
+    "test": "python -m pytest -q code/tests",
+    "validate": "python code/scripts/validate_release.py"
+  }
+}

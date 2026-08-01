@@ -1,0 +1,88 @@
+{
+  "schema_version": 5,
+  "title": "Effective-Toggle Persistence for Rolling Forecasts of Surface-Code Error Rates",
+  "package": "hqml_drift_forecasting",
+  "task": "falsification audit of hardware surface-code decoder-error extrapolation",
+  "manuscript": "../main.tex",
+  "seed": 1303,
+  "primary_hardware_data": {
+    "name": "Data for Suppressing quantum errors by scaling a surface code logical qubit",
+    "publisher": "Zenodo",
+    "creator": "Google Quantum AI Team",
+    "doi": "10.5281/zenodo.6804040",
+    "license": "CC BY 4.0",
+    "upstream_file": "google_qec3v5_experiment_data.zip",
+    "upstream_bytes": 315490804,
+    "upstream_md5": "a7fd8b481c3087090093106382dc217d",
+    "upstream_sha256": "ef569742126b305e163cc7fccbf6275e03bdd54d090dffb1aef12a78af0a74c4",
+    "derived_file": "data/source/google_qec3v5_experiment_summary.csv",
+    "derived_sha256": "15ffb8c7773a4fa5d1d498bbe01fd929334c0c13da69ab81704ad13beadde5f5",
+    "experiments": 130,
+    "hardware_shots": 6500000,
+    "derivation": "Parse each surface-code properties file and compare observed flips with committed decoder prediction files."
+  },
+  "secondary_simulated_stress_data": {
+    "name": "A Memristive Neural Decoder for Cryogenic Fault-Tolerant Quantum Error Correction - Syndromes Dataset",
+    "publisher": "Zenodo",
+    "creators": ["Victor Yon", "Gebremedhin A. Dagnew"],
+    "doi": "10.5281/zenodo.11166209",
+    "license": "CC BY 4.0",
+    "file": "data/source/syndromes_dataset.zip",
+    "md5": "f95f5223c58aea986664adcb96fdaaa0",
+    "sha256": "bdfce36a71f04295ac78fb372d9c2e381801c05e3be119f919750ef59026d072",
+    "simulated_shots": 70000000,
+    "unique_weighted_rows": 75598
+  },
+  "audit": {
+    "standard_baseline": "groupwise stationary binary-toggle saturation curve p_r(q)=[1-(1-2q)^r]/2",
+    "baseline_novelty_claimed": false,
+    "frozen_rolling_origin_folds": 4,
+    "toggle_beats_legacy_folds": 4,
+    "final_toggle_mse": 0.000140319292,
+    "final_legacy_mse": 0.000587174325,
+    "toggle_over_legacy_relative_reduction": 0.761026179934,
+    "paired_bootstrap_interval": [0.571812191642, 0.857930722892],
+    "audited_matrix_free_weights": [0.0, 0.0, 0.0, 0.0],
+    "stationary_compatible_groups": 0,
+    "hardware_groups": 10,
+    "familywise_delta": 0.05,
+    "interpretation": "The saturation curve falsifies the previous weak-baseline improvement claim but is itself rejected as a stationary physical model."
+  },
+  "locked_results": {
+    "file": "results/results.json",
+    "sha256": "84c817b2047a836ab246f351b4b89d88042d569187bf42ec5f2088bb035c17ab"
+  },
+  "verification": {
+    "install": "python -m pip install .",
+    "reproduce": "drift-forecasting-reproduce --verify",
+    "figures": "drift-forecasting-figures --figure-dir manuscript_assets/figures --table-dir manuscript_assets/tables",
+    "tests": "python -m pytest -q tests",
+    "tests_passed": 12,
+    "regenerated_outputs_byte_identical": true
+  },
+  "release_validation": {
+    "manuscript_source_sha256": "8ccb16727a9ba769b2f0c0f5f4c39404332374a3bc878c6e94ae8eb735737b49",
+    "bibliography_sha256": "b8a72b4433f92df15b7ce4bd553b48979a4612c1e2b62d470a7f0d81b518366a",
+    "manuscript_pdf_sha256": "274b2908a6fd015bff5eb9321063c8ea61ef7c3c8986dd39653f763ccbd7054c",
+    "manuscript_pages": 6,
+    "bibliography_entries": 91,
+    "figure_count": 4,
+    "figure_types": ["line graph", "bar chart", "simultaneous interval plot"],
+    "generated_table_file_count": 3,
+    "manuscript_table_environment_count": 2,
+    "theorem_or_proposition_count": 3,
+    "all_pdf_pages_visually_inspected": true,
+    "overfull_boxes": 0,
+    "undefined_citations_or_references": 0
+  },
+  "claim_boundaries": {
+    "field_wide_novelty_guarantee": false,
+    "wall_clock_speedup": false,
+    "hardware_speedup": false,
+    "quantum_advantage": false,
+    "new_physical_decoder": false,
+    "stationary_noise_model_validated": false,
+    "primary_data_are_hardware_measurements": true,
+    "secondary_data_are_simulated": true
+  }
+}

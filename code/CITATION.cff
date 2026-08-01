@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the manuscript and this release."
+title: "A Saturation-Baseline Audit of Matrix-Free Quantum Error-Rate Recovery"
+type: software
+authors:
+  - family-names: Huynh
+    given-names: Molena
+version: 3.0.0
+date-released: 2026-07-31
+license: MIT
